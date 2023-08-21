@@ -1,85 +1,49 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { reactive, provide } from 'vue';
+import { RouterView } from 'vue-router';
+import type { Member } from '@/interfaces';
+
+const memberList = new Map<number, Member>();
+memberList.set(33456, {id: 33456, name: "田中太郎", email: "aaa@example.com", points: 35, note: "初回入会特典あり"});
+memberList.set(44787, {id: 44787, name: "鈴木じろう", email: "bbb@example.com", points: 35, note: "初回入会特典あり"});
+
+provide("memberList", reactive(memberList));
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
+    <h1>Vue Routerサンプル</h1>
   </header>
-
-  <RouterView />
+  <main>
+    <RouterView/>
+  </main>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+<style>
+  #app {
+    display: block;
   }
-
-  .logo {
-    margin: 0 2rem 0 0;
+  main {
+    border: 1px solid blue;
+    padding: 10px;
   }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+  #breadcrumb ul li {
+    display: inline;
+    list-style-type: none;
   }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
+  #breadcrumb { 
+    margin-left: 0px;
   }
-}
+  #breadcrumb ul {
+    padding-left: 0px;
+  }
+  #breadcrumb ul .current {
+    color: red;
+  }
+  #breadcrumb ul li::before {
+    content: " > ";
+  }
+  #breadcrumb ul li:first-child::before {
+    content: none;
+  }
 </style>
