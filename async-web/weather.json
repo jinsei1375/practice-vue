@@ -1,0 +1,46 @@
+{
+  "coord": {
+    "lon": 134.7,
+    "lat": 34.8167
+  },
+  "weather": [
+    {
+      "id": 804,
+      "main": "Clouds",
+      "description": "厚い雲",
+      "icon": "04d"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 302.19,
+    "feels_like": 306.35,
+    "temp_min": 301.69,
+    "temp_max": 302.19,
+    "pressure": 1013,
+    "humidity": 72,
+    "sea_level": 1013,
+    "grnd_level": 1012
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 2.86,
+    "deg": 158,
+    "gust": 3.7
+  },
+  "clouds": {
+    "all": 100
+  },
+  "dt": 1693617302,
+  "sys": {
+    "type": 2,
+    "id": 86031,
+    "country": "JP",
+    "sunrise": 1693600461,
+    "sunset": 1693646903
+  },
+  "timezone": 32400,
+  "id": 1862627,
+  "name": "姫路市",
+  "cod": 200
+}
